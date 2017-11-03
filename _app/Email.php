@@ -9,23 +9,23 @@ class Email
 {
     private $mail = \stdClass::class;
 
-    public function __construct()
+    public function __construct($stmpDebug, $host, $user, $pass, $smtpSecure, $port, $setFromMail, $setFromName)
     {
         $this->mail = new PHPMailer(true);
-        $this->mail->SMTPDebug = 2;
+        $this->mail->SMTPDebug = $stmpDebug;
         $this->mail->isSMTP();
-        $this->mail->Host = 'server3.rapidcloud.com.br';
+        $this->mail->Host = $host;
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = 'sales@pluginswc.com';
-        $this->mail->Password = 'Lsphgjr@2017';
-        $this->mail->SMTPSecure = 'ssl';
-        $this->mail->Port = 465;
+        $this->mail->Username = $user;
+        $this->mail->Password = $pass;
+        $this->mail->SMTPSecure = $smtpSecure;
+        $this->mail->Port = $port;
         $this->mail->CharSet = 'utf-8';
         $this->mail->setLanguage('br');
         $this->mail->isHTML(true);
 
         //Recipients
-        $this->mail->setFrom('sales@pluginswc.com', 'Plugins WC (Sales)');
+        $this->mail->setFrom($setFromMail, $setFromName);
 
     }
 
