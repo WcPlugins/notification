@@ -1,0 +1,26 @@
+{
+    "name": "wcplugins/notification",
+    "description": "This a library that uses composer on the basis for generating email notification",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Plugins WC",
+            "email": "sales@pluginswc.com",
+			"homepage": "https://www.pluginswc.com",
+			"role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "6.0.1"
+    },
+    "config": {
+        "vendor-dir": "_libext"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notification\\": "_app"
+        }
+    }
+}
